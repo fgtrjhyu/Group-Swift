@@ -1,36 +1,45 @@
 //
 //  GroupTests.swift
-//  GroupTests
+//  Group
 //
-//  Created by 江口 隆夫 on 2015/04/06.
+//  Created by fgtrjhyu on 2015/04/06.
 //  Copyright (c) 2015年 fgtrjhyu. All rights reserved.
 //
 
 import UIKit
 import XCTest
+import Group
 
 class GroupTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
+        let g = Group<Int>(equivalent:==)
+        g.add(4, 5, 1, 2, 3, 2, 3, 1, 3, 2, 4)
+        var actual: [[Int]] = []
+        for r in g {
+            var mactual: [Int] = []
+            for m in r {
+                if m === r.first {
+                    print(">\(m.value)");
+                } else {
+                    print(",\(m.value)");
+                }
+                mactual.append(m.value)
+            }
+            println()
+            actual.append(mactual)
         }
+        XCTAssertEqual(
+            [[4, 4], [5], [1, 1], [2, 2, 2], [3, 3, 3]],
+            actual,"")
     }
     
 }

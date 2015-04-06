@@ -2,7 +2,7 @@
 //  Group.h
 //  Group
 //
-//  Created by 江口 隆夫 on 2015/04/06.
+//  Created by fgtrjhyu on 2015/04/06.
 //  Copyright (c) 2015年 fgtrjhyu. All rights reserved.
 //
 
